@@ -1,0 +1,58 @@
+@sun-color: #fde31a;
+@sun-bg-color: #8ed8e0;
+@moon-color: #fafbb2;
+@moon-bg-color: #3e5a98;
+@transition-options: .25s ease-in-out;
+@background-color-light: #f1faff;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.switch-input {
+  display: none;
+}
+
+
+.switch-control {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background: @sun-bg-color;
+  border-radius: 3em;
+  transition: background @transition-options;
+  cursor: pointer;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: @sun-color;
+    border-radius: inherit;
+    box-shadow: 0 0 7px 1px @sun-color;
+    transition: background @transition-options,
+      box-shadow @transition-options,
+      left @transition-options;
+  }
+}
+
+.switch-input:checked {
+  + .switch-control {
+    background: @moon-bg-color;
+     &::before {
+      left: 30px;
+      background: @moon-color;
+      box-shadow: 0 0 4px 1px @moon-color;
+    }
+  }
+
+}
