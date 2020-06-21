@@ -8,3 +8,4 @@ checkbox.addEventListener("change", function () {
           theme.setAttribute("href", "./style/main.css");
      }
 });
+console.log("--------------\n-HELLO WORLD!-\n--------------");
