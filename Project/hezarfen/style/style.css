@@ -1,0 +1,60 @@
+.navbar {
+     background-color: #000000;
+     color: #ffffff;
+}
+.navbar-brand {
+     color: #ffffff;
+}
+
+.custom-toggler .navbar-toggler-icon {
+     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler .navbar-toggler {
+     border-color: rgb(255, 255, 255);
+     border: 2px solid;
+}
+.custom-nav-link {
+     color: #ffffff;
+}
+.custom-nav-link:hover {
+     color: rgba(255, 255, 255, 0.5);
+}
+.custom-hr {
+     border-color: #252525;
+     border-style: solid;
+     margin: 0;
+     padding: 0;
+     width: 60vw;
+}
+
+@media (min-width: 992px) {
+     /* VISIBLE HR TAG*/
+     .custom-hr {
+          display: none;
+     }
+     /*UNDERLINE ANIMATION*/
+
+     .underline {
+          position: relative;
+     }
+
+     .underline::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 0;
+          height: 2px;
+          background-color: #ffffff;
+          transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+     }
+
+     @media (hover: hover) and (pointer: fine) {
+          .underline:hover::before {
+               left: 0;
+               right: auto;
+               width: 100%;
+          }
+     }
+}
